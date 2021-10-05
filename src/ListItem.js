@@ -15,7 +15,7 @@ export default function ListItem(props) {
   if (title.length > 50){
     title = title.slice(0,50)+'...';
   }
-
+  const levelClass = quantity > 20 ? 'level-high' : (quantity > 10 ? 'level-medium' : 'level-low');
 
 
   return (
@@ -28,7 +28,7 @@ export default function ListItem(props) {
     <div className="item-details">
       <p className="item-title">{title}</p>
       <p className="item-price">{currency_code}{price}</p>
-      <p className="item-quantity level-medium">{quantity} left</p>
+      <p className={`item-quantity ${levelClass}`}>{quantity} left</p>
     </div>
   </div>
   )
